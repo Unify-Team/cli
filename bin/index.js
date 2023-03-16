@@ -10,7 +10,6 @@ program
   .description('directory to write to')
   .action(async (directory) => {
     let outpuit = await axios.post("http://localhost:5001/unify-to-mui")
-    console.log(outpuit.data.muiString)
     fs.writeFile(directory, outpuit.data.muiString, () => {})
 });
 
@@ -20,7 +19,6 @@ program
   .description('directory to write to')
   .action(async (directory) => {
     let outpuit = await axios.post("http://localhost:5001/get-new-tokens")
-    console.log(outpuit.data.muiString)
     fs.writeFile(directory, outpuit.data.muiString, () => {})
 });
 
